@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>code 2048</title>
+  </head>
+  <body>
+      <canvas id="myCanvas" width="400" height="400" style="border: 1px solid #000000;"></canvas>
+      <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        function loop(){
+          ctx.beginPath();
+          for(i=0;i<=400;i+=100){
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, 400);
+            ctx.moveTo(0, i);
+            ctx.lineTo(400, i);
+          }
+          ctx.stroke();
+    window.requestAnimationFrame(function(){loop()});
+        }
+        function getkey(event){
+          var x=event.keyCode||event.which;
+          console.log(x);
+        }
+        window.addEventListener("keydown",function(){
+        getkey(event);
+        });
+    window.requestAnimationFrame(function(){loop()});
+      </script>
+  </body>
+</html>
