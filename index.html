@@ -10,11 +10,12 @@
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         var val=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
+        val[Math.floor(Math.Random*16)]=2;
         function sup() {
           for (var i = 0; i < val.length; i++) {
             if ( i - 4 >= 0 && val[i - 4] > 0) {
-
+                val[i-4]=val[i];
+                val[i]=0;
             }
           }
         }
