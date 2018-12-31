@@ -27,6 +27,12 @@
         }
         function getkey(event){
           var x=event.keyCode||event.which;
+          switch(x){
+            case 38:sup();break;
+            case 40:sdn();break;
+            case 37:slft();break;
+            case 39:srgt();break;
+          }
           console.log(x);
         }
         window.addEventListener("keydown",function(){
